@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenn met Gwen - Online Reservation</title>
+    <!-- Navbar <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>  -->
+    <!-- Navbar <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="massage.css">
+     <!-- Navbar <script src="massage.js"></script>-->
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Zenn met Gwenn</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Diensten</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#booking">Book Nu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="bg-light text-center py-5">
+        <div class="container">
+            <h1>Welcome bij Zenn Met Gwenn</h1>
+            <p>Begin jouw ultieme reis naar volledige ontspanning.</p>
+            <a href="#booking" class="btn btn-primary">book een sessie</a>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Ontdek Onze Uitgebreide Diensten</h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <h4>Yoga aan huis</h4>
+                    <p>Gun jezelf een moment van rust met een privé yogales. Boek je ontspannende sessie hieronder!</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Chinese rug en nek massage</h4>
+                    <p>Ervaar de weldadige kracht van een Chinese rug- en nekmassage. Ontspan terwijl spanning wordt weggenomen en je energie weer in balans wordt gebracht.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Hot Stone Massage</h4>
+                    <p>Laat je verwennen met warme stenen die de doorbloeding stimuleren en diepe ontspanning brengen.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Relax massage</h4>
+                    <p>Verwen jezelf met een ontspannende relaxmassage. Laat stress wegsmelten en voel je volledig herboren.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Kracht training senioren</h4>
+                    <p>Versterk je lichaam en verhoog je uithoudingsvermogen met krachttraining. Bereik je fitnessdoelen en voel je sterker dan ooit!.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Boek hier en laat de stress van je afglijden!</h2>
+            <form id="bookingForm"  action="https://formsubmit.co/gwen.deryck@telenet.be"  method="POST" class="mt-4">
+                    
+                        <!-- Hidden inputs for FormSubmit configuration -->
+                    <input type="hidden" name="_subject" value="New Massage Reservation!">
+                    <input type="hidden" name="_autoresponse" 
+                    value="Bedankt voor uw reservering! We kijken ernaar uit om u met plezier te verwelkomen en te bedienen!
+                    Indien u nog extra vragen heeft contacteer via het nummer +32498930036 of contacteer mij gerust door onderaan in onze website een mailtje te sturen ">
+                    <input type="hidden" name="_cc" value="CLIENT_EMAIL">
+
+                <div class="mb-3">
+                    <label for="name"  class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Choose a Date</label>
+                    <input type="date" class="form-control" id="date" required>
+                </div>
+                <div class="mb-3">
+                    <label for="time" class="form-label">Choose a Time</label>
+                    <input type="time" class="form-control" id="time" required>
+                </div>
+                <div class="mb-3">
+                    <label for="service" class="form-label">Select a Service</label>
+                    <select id="service" class="form-select" required>
+                        <option value="Yoga aan huis">Yoga aan huis</option>
+                        <option value="Relax massage">Relax massage</option>
+                        <option value="Hot Stone Massage">Hot Stone Massage</option>
+                        <option value="Krachttraining senioren">Krachttraining senioren</option>
+                        <option value="Chinese rug en nek massage">Chinese rug en nek massage</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Boek mijn sessie</button>
+                <!--<div id="paypal-button-container"></div> PayPal Button -->
+            </form>
+        </div>
+    </section>
+
+
+   <!-- <section id="calendar">
+        <h2>Your Reservation</h2>
+        <div id="calendarContainer"></div>
+      </section> -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Contact Us</h2>
+            <p class="text-center">Have questions? Reach out to us!</p>
+            <form id="contactForm" class="mt-4" action="https://formsubmit.co/gwen.deryck@telenet.be" method="POST">
+                <!-- Replace YOUR_EMAIL_HERE with your actual email address -->
+                <div class="mb-3">
+                    <label for="contactName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="contactName" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contactEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="contactEmail" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" class="form-control" name="message" rows="4" required></textarea>
+                </div>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Contact Form Submission">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Zenn met Gwen. All rights reserved.</p>
+    </footer>
+</body>
+</html>
