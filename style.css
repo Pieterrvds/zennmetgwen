@@ -21,7 +21,7 @@ body {
 header {
     text-align: center;
     padding: 100px 20px;
-    background-image: url('img/zeen\ met\ gwenn\ massageruimte.jpg'); /* Replace with your image URL */
+    background-image: url('img/zeen met gwenn massageruimte.jpg'); /* Replace with your image URL */
     background-size: cover; /* Ensures the image covers the entire section */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat;
@@ -65,7 +65,7 @@ h1, h2, h4 {
 
 /* Booking Section Styling */
 #booking  {
-    background-image: url('img/zeen\ met\ gwenn\ massageruimte.jpg'); /* Replace with the actual image URL */
+    background-image: url('img/zeen met gwenn massageruimte.jpg'); /* Replace with the actual image URL */
     background-size: cover; /* Ensures the image covers the entire section */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents repeating */
@@ -264,7 +264,7 @@ h1, h2, h4 {
   
 /* Contact Section with Background Image */
 #contact {
-  background-image: url('img/zenn\ met\ gwenn\ yoga\ matjes.jpg'); /* Replace with your image path */
+  background-image: url('img/zenn met gwenn yoga matjes.jpg'); /* Replace with your image path */
   background-size: cover; /* Ensures the image covers the entire section */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents tiling */
