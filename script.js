@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: `${service} - ${name}`,
             start: `${date}T${time}`,
             allDay: false,
-            description: `Service: ${service}\nName: ${name}\nEmail: ${email}`
+            //description: `Service: ${service}\nName: ${name}\nEmail: ${email}`
         };
         // Add event to calendar
         calendar.addEvent(newEvent);
