@@ -34,8 +34,15 @@ document.addEventListener('DOMContentLoaded', function() {
         ccField.type = "hidden";
         ccField.name = "_cc";
         ccField.value = email; // Client's email
-        reservationForm.appendChild(ccField);
+        bookingForm.appendChild(ccField);
 
+        // Display thank you modal
+         thankYouModal.style.display = "block";
+        // Close modal after 3 seconds
+            setTimeout(() => {
+            thankYouModal.style.display = "none";
+            }, 3000);
+        
         // Create a new event
         const newEvent = {
             title: `${service} - ${name}`,
@@ -47,21 +54,13 @@ document.addEventListener('DOMContentLoaded', function() {
         calendar.addEvent(newEvent);
 
         // Submit the form to FormSubmit
-        reservationForm.submit();
+        bookingForm.submit();
 
         // Confirmation message
          alert("Your reservation has been added to the calendar and confirmation email sent.");
 
         // Reset form
-        reservationForm.reset();
-
-        // Display thank you modal
-        thankYouModal.style.display = "block";
-
-        // Close modal after 3 seconds
-        setTimeout(() => {
-        thankYouModal.style.display = "none";
-        }, 3000);
+        bookingForm.reset();
 
     });
 
