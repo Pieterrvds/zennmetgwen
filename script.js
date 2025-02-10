@@ -35,38 +35,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
-    const navbarToggler = document.querySelector(".navbar-toggler");
-    const navbarCollapse = document.querySelector(".navbar-collapse");
-    const navbarLinks = document.querySelectorAll(".nav-link");
-    const overlay = document.createElement("div"); // Create an overlay for closing menu
-    overlay.classList.add("mobile-nav-overlay");
-    document.body.appendChild(overlay);
+    let navbarToggler = document.querySelector(".navbar-toggler");
+    let navbarCollapse = document.querySelector("#navbarNav");
 
-    // Show animation when menu opens
     navbarToggler.addEventListener("click", function () {
         if (navbarCollapse.classList.contains("show")) {
             navbarCollapse.classList.remove("show");
-            overlay.style.display = "none"; // Hide overlay
         } else {
             navbarCollapse.classList.add("show");
-            overlay.style.display = "block"; // Show overlay
         }
     });
-
-    // Close menu when clicking a link
-    navbarLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            navbarCollapse.classList.remove("show");
-            overlay.style.display = "none";
-        });
-    });
-
-    // Close menu when clicking outside
-    overlay.addEventListener("click", function () {
-        navbarCollapse.classList.remove("show");
-        overlay.style.display = "none";
-    });
 });
-
