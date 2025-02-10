@@ -5,6 +5,10 @@ body {
     color: #556B2F; /* Moss green */
 }
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: hsl(82, 39%, 30%); /* Moss green */
     background-color: #EAD1DC !important; /* Dirty pink */
 }
@@ -371,3 +375,46 @@ footer p {
     z-index: 998;
 }
 
+/* Hide the menu initially */
+.navbar-collapse {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s ease-in-out;
+}
+
+/* When navbar is expanded, allow it to show fully */
+.navbar-collapse.show {
+    height: auto;
+    animation: slideDown 0.4s ease-in-out;
+}
+
+/* Keyframe for slide-down effect */
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Apply animation to individual links */
+.navbar-nav .nav-item {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+/* Delay animation for each link */
+.navbar-collapse.show .nav-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.navbar-collapse.show .nav-item:nth-child(1) { transition-delay: 0.1s; }
+.navbar-collapse.show .nav-item:nth-child(2) { transition-delay: 0.2s; }
+.navbar-collapse.show .nav-item:nth-child(3) { transition-delay: 0.3s; }
+.navbar-collapse.show .nav-item:nth-child(4) { transition-delay: 0.4s; }
