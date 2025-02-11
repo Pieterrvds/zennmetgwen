@@ -21,7 +21,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Diensten</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#booking">Book Nu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#booking">Boek Nu</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -31,9 +31,9 @@
     <!-- Hero Section -->
     <header id="home" class="bg-light text-center py-5">
         <div class="container">
-            <h1>Welcome bij Zen Met Gwen</h1>
+            <h1>Welcome bij Zenn Met Gwenn</h1>
             <p>Begin jouw ultieme reis naar volledige ontspanning.</p>
-            <a href="#booking" class="btn btn-primary">book een sessie</a>
+            <a href="#booking" class="btn btn-primary">boek een sessie</a>
         </div>
     </header>
 
@@ -70,17 +70,10 @@
     <section id="booking" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center">Boek hier en laat de stress van je afglijden!</h2>
-            <form id="bookingForm"  action="https://formsubmit.co/gwen.deryck@telenet.be"  method="POST" class="mt-4">
+            <form id="bookingForm"  action="https://formsubmit.co/gwen.deryck@telenet.be" method="POST" class="mt-4">
                     
-                        <!-- Hidden inputs for FormSubmit configuration -->
-                    <input type="hidden" name="_subject" value="New Massage Reservation!">
-                    <input type="hidden" name="_autoresponse" 
-                    value="Bedankt voor uw reservering! We kijken ernaar uit om u met plezier te verwelkomen en te bedienen!
-                    Indien u nog extra vragen heeft contacteer via het nummer +32498930036 of contacteer mij gerust door onderaan in onze website een mailtje te sturen ">
-                    <input type="hidden" name="_cc" value="Pieterv-d-s@hotmail.com">
-
                 <div class="mb-3">
-                    <label for="name"  class="form-label">Full Name</label>
+                    <label for="name"  class="form-label">Jouw naam</label>
                     <input type="text" class="form-control" id="name" required>
                 </div>
                 <div class="mb-3">
@@ -88,11 +81,11 @@
                     <input type="email" class="form-control" id="email" required>
                 </div>
                 <div class="mb-3">
-                    <label for="date" class="form-label">Choose a Date</label>
+                    <label for="date" class="form-label">Kies een dag</label>
                     <input type="date" class="form-control" id="date" required>
                 </div>
                 <div class="mb-3">
-                    <label for="time" class="form-label">Choose a Time</label>
+                    <label for="time" class="form-label">Kies een tijd</label>
                     <input type="time" class="form-control" id="time" required>
                 </div>
                 <div class="mb-3">
@@ -105,8 +98,18 @@
                         <option value="Chinese rug en nek massage">Chinese rug en nek massage</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Boek mijn sessie</button>
-                <div id="paypal-button-container"></div>
+
+                 <!-- Hidden inputs for FormSubmit configuration -->
+                 <input type="hidden" name="_subject" value="New Massage Reservation!">
+                 <input type="hidden" name="_autoresponse" 
+                  value="Bedankt voor uw reservering! We kijken ernaar uit om u met plezier te verwelkomen en te bedienen!
+                         Indien u nog extra vragen heeft contacteer via het nummer +32498930036 of contacteer mij gerust door onderaan in onze website een mailtje te sturen ">
+                 <!-- Send a copy to the user -->
+                 <input type="hidden" name="_cc" value="{email}">
+                 <input type="hidden" name="_next" value="https://zenmetgwen.com">
+
+                 <button type="submit" class="btn btn-primary">Boek mijn sessie</button>
+                 <div id="paypal-button-container"></div>
             </form>
         </div>
     </section>
@@ -115,25 +118,25 @@
   <div id="thankYouModal" class="modal">
     <div class="modal-content">
       <img src="img/bedankingsbericht.jpg" alt="Thank You" class="thankyou-img">
-      <p>Bedankt voor uw booking</p>
+      <p>Bedankt voor uw boeking</p>
     </div>
   </div>
 
 
     <section id="calendar">
-        <h2>Your Reservation</h2>
+        <h2>Jouw reservatie</h2>
         <div id="calendarContainer"></div>
       </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-5">
         <div class="container">
-            <h2 class="text-center">Contact Us</h2>
-            <p class="text-center">Have questions? Reach out to us!</p>
+            <h2 class="text-center">Contacteer ons</h2>
+            <p class="text-center">Vragen? Wij helpen graag!</p>
             <form id="contactForm" class="mt-4" action="https://formsubmit.co/gwen.deryck@telenet.be" method="POST">
                 <!-- Replace YOUR_EMAIL_HERE with your actual email address -->
                 <div class="mb-3">
-                    <label for="contactName" class="form-label">Name</label>
+                    <label for="contactName" class="form-label">Naam</label>
                     <input type="text" class="form-control" id="contactName" name="name" required>
                 </div>
                 <div class="mb-3">
@@ -141,12 +144,12 @@
                     <input type="email" class="form-control" id="contactEmail" name="email" required>
                 </div>
                 <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
+                    <label for="message" class="form-label">Jouw bericht</label>
                     <textarea id="message" class="form-control" name="message" rows="4" required></textarea>
                 </div>
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="New Contact Form Submission">
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                <button type="submit" class="btn btn-primary">Stuur bericht</button>
             </form>
         </div>
     </section>
