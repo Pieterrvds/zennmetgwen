@@ -47,3 +47,40 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const modal = document.getElementById("thankYouModal");
+    const closeBtn = document.querySelector(".close");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default submission
+
+        // Show modal with smooth animation
+        modal.classList.add("show");
+
+        // Hide modal after 3 seconds
+        setTimeout(() => {
+            modal.classList.remove("show");
+        }, 3000);
+
+        // Optionally, reset form after submission
+        setTimeout(() => {
+            form.reset();
+        }, 3500);
+    });
+
+    // Close modal when clicking close button
+    closeBtn.addEventListener("click", function () {
+        modal.classList.remove("show");
+    });
+
+    // Close modal if clicking outside modal content
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            modal.classList.remove("show");
+        }
+    });
+});
+
