@@ -1,438 +1,474 @@
 
 body {
-    font-family: 'Lora', serif; /* Meditative font style */
-    background-color: #EAD1DC; /* Dirty pink */
-    color: #556B2F; /* Moss green */
+  font-family: 'Lora', serif; /* Meditative font style */
+  background-color: #EAD1DC; /* Dirty pink */
+  color: #556B2F; /* Moss green */
 }
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: hsl(82, 39%, 30%); /* Moss green */
-    background-color: #EAD1DC !important; /* Dirty pink */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: hsl(82, 39%, 30%); /* Moss green */
+  background-color: #EAD1DC !important; /* Dirty pink */
 }
 
 .navbar-brand, .nav-link {
-    color: hsl(82, 39%, 30%);; 
+  color: hsl(82, 39%, 30%);; 
 }
 .navbar-brand:hover, .nav-link:hover {
-    color: #F8E1E8 !important; /* Slightly lighter dirty pink */
+  color: #F8E1E8 !important; /* Slightly lighter dirty pink */
 }
 /* Hero Section Styling */
 header {
-    text-align: center;
-    padding: 100px 20px;
-    background-image: url('img/massage.jpg'); /* Replace with your image URL */
-    background-size: cover; /* Ensures the image covers the entire section */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat;
-    color: #FFF; /* White text for readability */
-    box-shadow: inset 0 0 0 1000px rgba(170, 182, 148, 0.6); /* Moss green overlay for a meditative look */
-  }
-  
-  header h1 {
-    font-family: 'Lora', serif;
-    font-size: 3rem;
-    margin-bottom: 20px;
-  }
-  
-  header p {
-    font-size: 1.2rem;
-    margin: 0;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5;
-  }
-  
+  text-align: center;
+  padding: 100px 20px;
+  background-image: url('img/massage.jpg'); /* Replace with your image URL */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
+  color: #FFF; /* White text for readability */
+  box-shadow: inset 0 0 0 1000px rgba(170, 182, 148, 0.6); /* Moss green overlay for a meditative look */
+}
+
+header h1 {
+  font-family: 'Lora', serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
 section {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 h1, h2, h4 {
-    font-family: 'Lora', serif; /* Meditative font style */
-    text-align: center; 
+  font-family: 'Lora', serif; /* Meditative font style */
+  text-align: center; 
 }
 #services .col-md-4 {
-    background-color: #F8E1E8; /* Lighter dirty pink */
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 5px;
+  background-color: #F8E1E8; /* Lighter dirty pink */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 5px;
 }
 #services .col-md-4 h4 {
-    color: #556B2F; /* Moss green */
+  color: #556B2F; /* Moss green */
 }
 
 
 /* Booking Section Styling */
 #booking  {
-    background-image: url('img/massage.jpg'); /* Replace with the actual image URL */
-    background-size: cover; /* Ensures the image covers the entire section */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents repeating */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a soft shadow */
-    color: #FFFFFF; /* White text for contrast */
-  }
-  
-  #booking  h2 {
-    font-family: 'Lora', serif;
-    color: #FFFFFF; /* Ensure text is readable */
-  }
-  
-  #booking  form {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for form */
-    padding: 20px;
-    border-radius: 10px;
-    color: #FFFFFF;
-  }
-  
-  #booking  label {
-    font-weight: bold;
-  }
-  
-  #booking  input,
-  #booking  button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-    font-family: 'Lora', serif;
-  }
-  
-  #booking input {
-    background-color: #F5E9EF; /* Light pink */
-    color: #556B2F; /* Moss green text */
-  }
-  
-  #booking  button {
-    background-color: #556B2F;
-    color: #EAD1DC;
-    cursor: pointer;
-  }
-  
-  #booking button:hover {
-    background-color: #394A2D; /* Darker moss green for hover */
-  }
-  
-/* Modal Background */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.4s ease-in-out;
-}
-
-/* Modal Content */
-.modal-content {
-  background: white;
+  background-image: url('img/massage.jpg'); /* Replace with the actual image URL */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating */
   padding: 20px;
   border-radius: 10px;
-  text-align: center;
-  transform: scale(0.8);
-  opacity: 0;
-  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a soft shadow */
+  color: #FFFFFF; /* White text for contrast */
 }
 
-/* Show modal with animation */
-.modal.show {
-  display: flex;
+#booking  h2 {
+  font-family: 'Lora', serif;
+  color: #FFFFFF; /* Ensure text is readable */
 }
 
-.modal.show .modal-content {
-  opacity: 1;
-  transform: scale(1);
+#booking  form {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for form */
+  padding: 20px;
+  border-radius: 10px;
+  color: #FFFFFF;
 }
 
-/* Close button */
-.close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 24px;
+#booking  label {
+  font-weight: bold;
+}
+
+#booking  input,
+#booking  button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Lora', serif;
+}
+
+#booking input {
+  background-color: #F5E9EF; /* Light pink */
+  color: #556B2F; /* Moss green text */
+}
+
+#booking  button {
+  background-color: #556B2F;
+  color: #EAD1DC;
   cursor: pointer;
 }
 
+#booking button:hover {
+  background-color: #394A2D; /* Darker moss green for hover */
+}
+
+/* Custom Toggle Switch */
+.custom-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hidden default checkbox */
+.custom-toggle input {
+  display: none;
+}
+
+/* Toggle switch container */
+.toggle-label {
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Toggle circle */
+.toggle-circle {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: left 0.3s ease;
+}
+
+/* Toggle checked state */
+.custom-toggle input:checked + .toggle-label {
+  background-color: #4CAF50;
+}
+
+/* Move circle when checked */
+.custom-toggle input:checked + .toggle-label .toggle-circle {
+  left: 27px;
+}
+
+/* Text color change on toggle */
+#toggleText {
+  font-weight: 600;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.custom-toggle input:checked ~ #toggleText {
+  color: #4CAF50;
+}
+
+
+/* Modal styles */
+.modal {
+display: none; /* Hidden by default */
+position: fixed;
+z-index: 1000; /* On top of everything */
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+}
+
+.modal-content {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+background-color: #fff;
+padding: 20px;
+border-radius: 10px;
+}
 
 .thankyou-img {
-  width: 300px; /* Adjust as needed */
-  height: auto;
+width: 150px; /* Adjust as needed */
+height: auto;
 }
 
 .modal p {
-  margin-top: 10px;
-  font-size: 1.5rem;
-  color: #556B2F; /* Moss green */
+margin-top: 10px;
+font-size: 1.5rem;
+color: #556B2F; /* Moss green */
 }
 
 
 /* General FullCalendar Container Styling */
 #calendarContainer {
-    max-width: 90%;
-    margin: 0 auto;
-    background-color: #F5E9EF; /* Light pinkish background */
-    border: 2px solid #556B2F; /* Moss green border */
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Calendar Header */
-  .fc-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #556B2F;
-    color: #EAD1DC;
-    border-radius: 5px;
-    padding: 5px;
-  }
-  
-  .fc-toolbar-title {
-    font-family: 'Lora', serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .fc-toolbar-chunk {
-    flex: 1;
-    text-align: center;
-  }
-  
-  /* Calendar Buttons */
-  .fc-button {
-    background-color: #EAD1DC;
-    color: #556B2F;
-    border: 1px solid #556B2F;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 0.9rem;
-  }
-  
-  .fc-button:hover {
-    background-color: #556B2F;
-    color: #EAD1DC;
-  }
-  
-  /* Calendar Days (Grid Background) */
-  .fc-daygrid-day {
-    background-color: #FFFDFE; /* Slight off-white for the grid */
-    border: 1px solid #F5E9EF;
-  }
-  
-  .fc-day-today {
-    background-color: #EAD1DC !important; /* Highlighted day */
-    color: #556B2F;
-  }
-  
-  /* Event Styling */
-  .fc-event {
-    background-color: #556B2F;
-    color: #EAD1DC;
-    border: none;
-    border-radius: 3px;
-    font-size: 0.9rem;
-    padding: 2px 5px;
-  }
-  
-  .fc-event:hover {
-    background-color: #394A2D;
-    cursor: pointer;
-  }
-  
-  /* --- RESPONSIVE STYLING --- */
-  
-  /* For Small Screens (Up to 768px) */
-  @media screen and (max-width: 768px) {
-    /* Calendar Container */
-    #calendarContainer {
-      padding: 5px;
-      border-width: 1px;
-    }
-  
-    /* Calendar Toolbar */
-    .fc-toolbar {
-      flex-direction: column;
-      text-align: center;
-      gap: 10px;
-    }
-  
-    .fc-toolbar-title {
-      font-size: 1.2rem;
-    }
-  
-    /* Calendar Buttons */
-    .fc-button {
-      padding: 5px;
-      font-size: 0.8rem;
-    }
-  
-    /* Adjust Calendar Grid */
-    .fc-daygrid-day {
-      font-size: 0.8rem;
-      padding: 2px;
-    }
-  
-    .fc-event {
-      font-size: 0.8rem;
-      padding: 1px 3px;
-    }
-  }
-  
-  /* For Extra Small Screens (Up to 480px) */
-  @media screen and (max-width: 480px) {
-    /* Calendar Toolbar */
-    .fc-toolbar {
-      flex-direction: column;
-    }
-  
-    /* Toolbar Title */
-    .fc-toolbar-title {
-      font-size: 1rem;
-    }
-  
-    /* Calendar Buttons */
-    .fc-button {
-      width: 100%; /* Full-width buttons for smaller screens */
-      font-size: 0.7rem;
-      margin-bottom: 5px;
-    }
-  
-    /* Calendar Grid */
-    .fc-daygrid-day {
-      font-size: 0.7rem;
-    }
-  
-    /* Event Styling */
-    .fc-event {
-      font-size: 0.7rem;
-    }
-  }
-  
-  
-/* Contact Section with Background Image */
-#contact {
-  background-image: url('img/matjes.jpg'); /* Replace with your image path */
-  background-size: cover; /* Ensures the image covers the entire section */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents tiling */
-  color: #FFF; /* White text for contrast with the background */
-  padding: 20px;
+  max-width: 90%;
+  margin: 0 auto;
+  background-color: #F5E9EF; /* Light pinkish background */
+  border: 2px solid #556B2F; /* Moss green border */
   border-radius: 10px;
-  margin: 20px auto;
-  max-width: 800px;
+  padding: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Calendar Header */
+.fc-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #556B2F;
+  color: #EAD1DC;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.fc-toolbar-title {
+  font-family: 'Lora', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.fc-toolbar-chunk {
+  flex: 1;
   text-align: center;
 }
 
+/* Calendar Buttons */
+.fc-button {
+  background-color: #EAD1DC;
+  color: #556B2F;
+  border: 1px solid #556B2F;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+}
+
+.fc-button:hover {
+  background-color: #556B2F;
+  color: #EAD1DC;
+}
+
+/* Calendar Days (Grid Background) */
+.fc-daygrid-day {
+  background-color: #FFFDFE; /* Slight off-white for the grid */
+  border: 1px solid #F5E9EF;
+}
+
+.fc-day-today {
+  background-color: #EAD1DC !important; /* Highlighted day */
+  color: #556B2F;
+}
+
+/* Event Styling */
+.fc-event {
+  background-color: #556B2F;
+  color: #EAD1DC;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  padding: 2px 5px;
+}
+
+.fc-event:hover {
+  background-color: #394A2D;
+  cursor: pointer;
+}
+
+/* --- RESPONSIVE STYLING --- */
+
+/* For Small Screens (Up to 768px) */
+@media screen and (max-width: 768px) {
+  /* Calendar Container */
+  #calendarContainer {
+    padding: 5px;
+    border-width: 1px;
+  }
+
+  /* Calendar Toolbar */
+  .fc-toolbar {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .fc-toolbar-title {
+    font-size: 1.2rem;
+  }
+
+  /* Calendar Buttons */
+  .fc-button {
+    padding: 5px;
+    font-size: 0.8rem;
+  }
+
+  /* Adjust Calendar Grid */
+  .fc-daygrid-day {
+    font-size: 0.8rem;
+    padding: 2px;
+  }
+
+  .fc-event {
+    font-size: 0.8rem;
+    padding: 1px 3px;
+  }
+}
+
+/* For Extra Small Screens (Up to 480px) */
+@media screen and (max-width: 480px) {
+  /* Calendar Toolbar */
+  .fc-toolbar {
+    flex-direction: column;
+  }
+
+  /* Toolbar Title */
+  .fc-toolbar-title {
+    font-size: 1rem;
+  }
+
+  /* Calendar Buttons */
+  .fc-button {
+    width: 100%; /* Full-width buttons for smaller screens */
+    font-size: 0.7rem;
+    margin-bottom: 5px;
+  }
+
+  /* Calendar Grid */
+  .fc-daygrid-day {
+    font-size: 0.7rem;
+  }
+
+  /* Event Styling */
+  .fc-event {
+    font-size: 0.7rem;
+  }
+}
+
+
+/* Contact Section with Background Image */
+#contact {
+background-image: url('img/matjes.jpg'); /* Replace with your image path */
+background-size: cover; /* Ensures the image covers the entire section */
+background-position: center; /* Centers the image */
+background-repeat: no-repeat; /* Prevents tiling */
+color: #FFF; /* White text for contrast with the background */
+padding: 20px;
+border-radius: 10px;
+margin: 20px auto;
+max-width: 800px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+text-align: center;
+}
+
 .btn-primary {
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .btn-primary:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 
 footer {
-    background-color: #556B2F; /* Moss green */
-    color: #EAD1DC; /* Dirty pink */
+  background-color: #556B2F; /* Moss green */
+  color: #EAD1DC; /* Dirty pink */
 }
 footer p {
-    margin: 0;
+  margin: 0;
 }
 .form-control, .form-select {
-    border: 2px solid #556B2F; /* Moss green */
-    border-radius: 5px;
+  border: 2px solid #556B2F; /* Moss green */
+  border-radius: 5px;
 }
 .form-control:focus, .form-select:focus {
-    border-color: #6B8E23; /* Slightly lighter moss green */
-    box-shadow: 0 0 5px rgba(107, 142, 35, 0.5);
+  border-color: #6B8E23; /* Slightly lighter moss green */
+  box-shadow: 0 0 5px rgba(107, 142, 35, 0.5);
 }
 .btn {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 /* Navbar background and link styles */
 .navbar {
-    background-color: #EAD1DC !important; /* Dirty pink */
+  background-color: #EAD1DC !important; /* Dirty pink */
 }
 
 /* Hide menu items initially (for animation effect) */
 .navbar-nav {
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 /* When navbar is expanded, show links with animation */
 .navbar-collapse.show .navbar-nav {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Close menu when clicking outside */
 .navbar-toggler:focus {
-    outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
 
 /* Hide navbar when clicking outside */
 .mobile-nav-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
-    z-index: 998;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 998;
 }
 
 /* Hide the menu initially */
 .navbar-collapse {
-    height: 0;
-    overflow: hidden;
-    transition: height 0.4s ease-in-out;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s ease-in-out;
 }
 
 /* When navbar is expanded, allow it to show fully */
 .navbar-collapse.show {
-    height: auto;
-    animation: slideDown 0.4s ease-in-out;
+  height: auto;
+  animation: slideDown 0.4s ease-in-out;
 }
 
 /* Keyframe for slide-down effect */
 @keyframes slideDown {
-    from {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  from {
+      transform: translateY(-20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
 }
 
 /* Apply animation to individual links */
 .navbar-nav .nav-item {
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 /* Delay animation for each link */
 .navbar-collapse.show .nav-item {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
