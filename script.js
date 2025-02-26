@@ -37,15 +37,17 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        let savedBookings = JSON.parse(localStorage.getItem("bookedSlots")) || [];
-
-        // Check if the selected date & time is already booked
+        let savedBookings = localStorage.getItem("bookedSlots");
+        savedBookings = savedBookings ? JSON.parse(savedBookings) : []; // Zorgt ervoor dat null niet crasht
+        
         let isAlreadyBooked = savedBookings.some(booking => booking.date === date && booking.time === time);
-
+        
         if (isAlreadyBooked) {
             alert("Deze tijd en datum zijn al geboekt. Kies een andere tijd of datum.");
             return;
         }
+
+        
 
         // If not booked, save the reservation
         let newBooking = { name, email, date, time, service };
@@ -102,6 +104,46 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             event.target.submit(); // Allows the form to submit after processing
         }, 1000); // Delay for smooth transition
+
+            // Convert date & time into ICS format (YYYYMMDDTHHMMSS)
+    let startDate = new Date(`${date}T${time}`);
+    let endDate = new Date(startDate.getTime() + 60 * 60 * 1000); // 1-hour session
+
+    let formattedStart = startDate.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+    let formattedEnd = endDate.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+
+    // ICS file content
+    let icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Zen Met Gwen//Booking System//EN
+BEGIN:VEVENT
+UID:${Date.now()}@zenmetgwen.com
+DTSTAMP:${formattedStart}
+DTSTART:${formattedStart}
+DTEND:${formattedEnd}
+SUMMARY:${service} Appointment
+DESCRIPTION:Afspraak met ${name} (${email}) voor ${service}
+LOCATION:Zen met Gwen, Belgium
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+
+    // Generate ICS file as a downloadable link
+    let blob = new Blob([icsContent], { type: "text/calendar" });
+    let icsURL = URL.createObjectURL(blob);
+
+    // Add ICS link to the hidden input
+    document.getElementById("calendarLink").value = icsURL;
+
+    // Show download option for manual saving
+    let downloadLink = document.createElement("a");
+    downloadLink.href = icsURL;
+    downloadLink.download = "booking.ics";
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+
     });
     
 });
@@ -122,29 +164,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    let bookingForm = document.getElementById('bookingForm');
-    let submitButton = document.getElementById('bookingSubmit');
-    let serviceSelect = document.getElementById('service');
-    let payNowToggle = document.getElementById('payNow');
-    let paypalContainer = document.getElementById('paypal-container');
+    const form = document.getElementById("bookingForm");
+    const dateInput = document.getElementById("date");
+    const timeInput = document.getElementById("time");
+    const submitButton = document.getElementById("bookingSubmit");
+    const payNowToggle = document.getElementById("payNow");
+    const paypalContainer = document.getElementById("paypal-container");
 
     // Service prices
     const servicePrices = {
-        "Yoga aan huis": 50.00,
-        "Relax massage": 60.00,
-        "Hot Stone Massage": 70.00,
-        "Krachttraining senioren": 55.00,
-        "Chinese rug en nek massage": 65.00
+        "Yoga aan huis": 41.00,
+        "Relax massage": 61.00,
+        "Hot Stone Massage": 71.00,
+        "Krachttraining senioren": 41.00,
+        "Chinese rug en nek massage": 61.00
     };
 
-    let selectedPrice = servicePrices[serviceSelect.value]; // Default price
     let paymentCompleted = false;
 
-    function updatePayPalButton() {
-        // Clear old button
+    function updatePayPalButton(selectedPrice) {
         document.getElementById("paypal-button-container").innerHTML = "";
 
-        // Create new PayPal button
         paypal.Buttons({
             createOrder: function (data, actions) {
                 return actions.order.create({
@@ -166,34 +206,51 @@ document.addEventListener("DOMContentLoaded", function () {
         }).render('#paypal-button-container');
     }
 
-    // Toggle PayPal option
+    // Toggle PayPal payment
     payNowToggle.addEventListener('change', function () {
         if (this.checked) {
             paypalContainer.style.display = "block";
-            updatePayPalButton();
-            submitButton.disabled = true; // Disable submit until payment is made
+            let selectedService = document.getElementById('service').value;
+            updatePayPalButton(servicePrices[selectedService]);
+            submitButton.disabled = true;
         } else {
             paypalContainer.style.display = "none";
-            submitButton.disabled = false; // Enable submit if paying is not required
+            submitButton.disabled = false;
         }
     });
 
-    // Update PayPal button when service changes
-    serviceSelect.addEventListener('change', function () {
-        selectedPrice = servicePrices[this.value];
+    // Ensure correct PayPal amount when changing service
+    document.getElementById('service').addEventListener('change', function () {
         if (payNowToggle.checked) {
-            updatePayPalButton();
+            updatePayPalButton(servicePrices[this.value]);
         }
     });
 
-    // Form submission logic
-    bookingForm.addEventListener('submit', function (event) {
+    // Form Submission
+    form.addEventListener("submit", function (event) {
         if (payNowToggle.checked && !paymentCompleted) {
             event.preventDefault();
             alert("U moet eerst betalen voordat u uw boeking voltooit.");
+            return;
         }
+
+        // Store booked slots in localStorage
+        let bookedSlots = JSON.parse(localStorage.getItem("bookedSlots")) || [];
+        let newBooking = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            date: dateInput.value,
+            time: timeInput.value,
+            service: document.getElementById("service").value
+        };
+
+        bookedSlots.push(newBooking);
+        localStorage.setItem("bookedSlots", JSON.stringify(bookedSlots));
+
+        alert("Reservering succesvol! Je ontvangt een bevestiging per e-mail.");
     });
 });
+
 
 document.getElementById('payNow').addEventListener('change', function () {
     let toggleText = document.getElementById('toggleText');
