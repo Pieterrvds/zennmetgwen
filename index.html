@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zen met Gwen - Online Reservation</title>
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css" rel="stylesheet">
-    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=EUR"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AcJLXipsreQDWPNqUNKBknNhohnvhY3QtkXKNNSk0zMkYhvPgxcF-kFYKxaTadXAAbiyW4ZOO1Fummpb&currency=EUR"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
@@ -71,62 +71,60 @@
     <section id="booking" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center">Boek hier en laat de stress van je afglijden!</h2>
-            <form id="bookingForm"  action="https://formsubmit.co/gwen.deryck@telenet.be" method="POST" class="mt-4">
-                    
+            <form id="bookingForm" action="https://formsubmit.co/gwen.deryck@telenet.be" method="POST" class="mt-4">
                 <div class="mb-3">
-                    <label for="name"  class="form-label">Jouw naam</label>
-                    <input type="text" class="form-control" id="name" required>
+                    <label for="name" class="form-label">Jouw naam</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="email" required>
+                    <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="mb-3">
                     <label for="date" class="form-label">Kies een dag</label>
-                    <input type="date" class="form-control" id="date" required>
+                    <input type="date" class="form-control" id="date" name="date" required>
                 </div>
                 <div class="mb-3">
                     <label for="time" class="form-label">Kies een tijd</label>
-                    <input type="time" class="form-control" id="time" required>
+                    <input type="time" class="form-control" id="time" name="time" required>
                 </div>
                 <div class="mb-3">
-                    <label for="service" class="form-label">Select a Service</label>
-                    <select id="service" class="form-select" required>
-                        <option value="Yoga aan huis">Yoga aan huis</option>
-                        <option value="Relax massage">Relax massage</option>
-                        <option value="Hot Stone Massage">Hot Stone Massage</option>
-                        <option value="Krachttraining senioren">Krachttraining senioren</option>
-                        <option value="Chinese rug en nek massage">Chinese rug en nek massage</option>
+                    <label for="service" class="form-label">Kies een Service (1uur) Indien 30 min, boek zonder direct te betalen</label>
+                    <select id="service" class="form-select" name="service" required>
+                        <option value="Yoga aan huis">Yoga aan huis €41</option>
+                        <option value="Relax massage">Relax massage €61</option>
+                        <option value="Hot Stone Massage">Hot Stone Massage €71</option>
+                        <option value="Krachttraining senioren">Krachttraining senioren €41</option>
+                        <option value="Chinese rug en nek massage">Chinese rug en nek massage €61</option>
                     </select>
                 </div>
-
-                 <!-- Hidden inputs for FormSubmit configuration -->
-                 <input type="hidden" name="_subject" value="New Massage Reservation!">
-                 <input type="hidden" name="_autoresponse" 
-                  value="Bedankt voor uw reservering! We kijken ernaar uit om u met plezier te verwelkomen en te bedienen!
-                         Indien u nog extra vragen heeft contacteer via het nummer +32498930036 of contacteer mij gerust door onderaan in onze website een mailtje te sturen ">
-                 <!-- Send a copy to the user -->
-                 <input type="hidden" name="_cc" value="{email}">
-                 <input type="hidden" name="_next" value="https://zenmetgwen.com">
-
-                 <div class="mb-3">
-                    <label class="form-label">Wil je nu betalen?</label>
+            
+                <!-- Hidden inputs for FormSubmit -->
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" id="calendarLink" name="Calendar Event Link" value="">
+                <input type="hidden" name="_subject" value="New Massage Reservation!">
+                <input type="hidden" name="_autoresponse" value="Bedankt voor uw reservering! We kijken ernaar uit om u te verwelkomen. Contact: +32498930036.">
+                <input type="hidden" name="_next" value="https://zenmetgwen.com">
+            
+                <div class="mb-3">
+                    <label class="form-label">Klik aan indien je nu wil betalen</label>
                     <div class="custom-toggle">
                         <input type="checkbox" id="payNow">
                         <label for="payNow" class="toggle-label">
                             <span class="toggle-circle"></span>
                         </label>
-                        <span id="toggleText">Nee, ik betaal later</span>
+                        <span id="toggleText">Ik betaal nu</span>
                     </div>
-                </div>               
+                </div>
+            
                 <!-- PayPal button (Hidden by default) -->
                 <div id="paypal-container" style="display: none;">
                     <div id="paypal-button-container"></div>
                 </div>
-                
+            
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary" id="bookingSubmit">Boek mijn sessie</button>               
-            </form>
+                <button type="submit" class="btn btn-primary" id="bookingSubmit">Boek mijn sessie</button>
+            </form>            
         </div>
     </section>
 
