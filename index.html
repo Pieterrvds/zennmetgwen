@@ -136,11 +136,53 @@
     </div>
   </div>
 
-
+    <!-- Coalendar Section -->
     <section id="calendar">
         <h2>Jouw reservatie</h2>
         <div id="calendarContainer"></div>
-      </section>
+    </section>
+
+    <!-- Subscription Payment Section -->
+    <section id="subscriptions" class="subscriptions-section">
+        <h2>Onze Beurtenkaarten</h2>
+        <div class="cards-container">
+    
+            <!-- Yoga Beurtenkaart -->
+            <div class="card">
+                <img src="yoga-card.jpg" alt="Yoga Beurtenkaart">
+                <div class="card-content">
+                    <h3>10-Beurtenkaart Yoga</h3>
+                    <p>Geniet van 10 sessies ontspannende yoga.</p>
+                    <span class="price">€70</span>
+                    <div id="paypal-button-yoga"></div>
+                </div>
+            </div>
+    
+            <!-- Massage Beurtenkaart -->
+            <div class="card">
+                <img src="massage-card.jpg" alt="Massage Beurtenkaart">
+                <div class="card-content">
+                    <h3>10-Beurtenkaart Massage</h3>
+                    <p>Verwen jezelf met 10 ontspannende massages.</p>
+                    <span class="price">€450</span>
+                    <div id="paypal-button-massage"></div>
+                </div>
+            </div>
+    </div>
+    <!-- Hidden Form for Confirmation Email -->
+    <form id="payment-confirmation-form" action="https://formsubmit.co/gwen.deryck@telenet.be" method="POST" style="display: none;">
+    <input type="hidden" name="_subject" value="Nieuwe Beurtenkaart Aankoop!">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    
+    <input type="hidden" name="Naam" id="payer-name">
+    <input type="hidden" name="Email" id="payer-email">
+    <input type="hidden" name="Product" id="product-name">
+    <input type="hidden" name="Bedrag" id="product-price">
+    </form>
+
+    </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-5">
