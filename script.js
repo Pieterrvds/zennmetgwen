@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Allowed times: 12:00 PM, 16:00 PM, 21:00 PM, 22:00 PM
     timeInput.addEventListener("input", function () {
-        let allowedTimes = ["12:00", "16:00", "21:00", "22:00"];
+        let allowedTimes = [ "16:00","17:00","18:00","19:00", "20:00", "21:00"];
         if (!allowedTimes.includes(this.value)) {
             alert("Je kunt alleen kiezen uit 12:00, 16:00, 21:00 of 22:00.");
             this.value = "";
@@ -293,4 +293,58 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.classList.remove("show");
         }
     });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    function sendConfirmationEmail(name, email, product, price) {
+        document.getElementById("payer-name").value = name;
+        document.getElementById("payer-email").value = email;
+        document.getElementById("product-name").value = product;
+        document.getElementById("product-price").value = "€" + price;
+        document.getElementById("payment-confirmation-form").submit();
+    }
+
+    // PayPal button for 10-Beurtenkaart Yoga (€70)
+    paypal.Buttons({
+        createOrder: function (data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: { value: "70.00" }
+                }]
+            });
+        },
+        onApprove: function (data, actions) {
+            return actions.order.capture().then(function (details) {
+                alert("Betaling geslaagd! Bedankt " + details.payer.name.given_name + " voor je aankoop van de 10-beurtenkaart Yoga.");
+                
+                // Send confirmation email
+                sendConfirmationEmail(details.payer.name.given_name, details.payer.email_address, "10-Beurtenkaart Yoga", "70");
+            });
+        },
+        onError: function (err) {
+            alert("Betaling mislukt, probeer opnieuw.");
+        }
+    }).render('#paypal-button-yoga');
+
+    // PayPal button for 10-Beurtenkaart Massage (€450)
+    paypal.Buttons({
+        createOrder: function (data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: { value: "450.00" }
+                }]
+            });
+        },
+        onApprove: function (data, actions) {
+            return actions.order.capture().then(function (details) {
+                alert("Betaling geslaagd! Bedankt " + details.payer.name.given_name + " voor je aankoop van de 10-beurtenkaart Massage.");
+                
+                // Send confirmation email
+                sendConfirmationEmail(details.payer.name.given_name, details.payer.email_address, "10-Beurtenkaart Massage", "450");
+            });
+        },
+        onError: function (err) {
+            alert("Betaling mislukt, probeer opnieuw.");
+        }
+    }).render('#paypal-button-massage');
 });
