@@ -24,7 +24,8 @@
                     <li class="nav-item"><a class="nav-link" href="#services">Diensten</a></li>
                     <li class="nav-item"><a class="nav-link" href="#booking">Boek Nu</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
+                    <li class="nav-item"><a class="nav-link" href="https://indelivinghofstade.com">In De Living</a></li>
+               </ul>
             </div>
         </div>
     </nav>
@@ -147,16 +148,17 @@
         <h2>Onze Beurtenkaarten</h2>
         <div class="cards-container">
     
-            <!-- Yoga Beurtenkaart -->
-            <div class="card">
-                <img src="yoga-card.jpg" alt="Yoga Beurtenkaart">
-                <div class="card-content">
-                    <h3>10-Beurtenkaart Yoga</h3>
-                    <p>Geniet van 10 sessies ontspannende yoga.</p>
-                    <span class="price">€60</span>
-                    <div id="paypal-button-yoga"></div>
-                </div>
-            </div>
+<!-- Yoga Beurtenkaart -->
+<div class="card beurtenkaart">
+    <img src="yoga-card.jpg" alt="Yoga Beurtenkaart">
+    <div class="card-content">
+        <h3>10-Beurtenkaart Yoga</h3>
+        <p>Geniet van 10 sessies ontspannende yoga.</p>
+        <span class="price">€70</span>
+        <div id="paypal-button-yoga"></div>
+    </div>
+</div>
+
     </div>
     <!-- Hidden Form for Confirmation Email -->
     <form id="payment-confirmation-form" action="https://formsubmit.co/gwen.deryck@telenet.be" method="POST" style="display: none;">
@@ -205,5 +207,17 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+
+<!-- Pop-up container -->
+<div id="paypal-popup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2 id="popup-title"></h2>
+        <p id="popup-description"></p>
+        <div id="paypal-button-container"></div>
+    </div>
+</div>
+
+
 </body>
 </html>
