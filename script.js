@@ -152,15 +152,40 @@ END:VCALENDAR`;
 document.addEventListener("DOMContentLoaded", function () {
     let navbarToggler = document.querySelector(".navbar-toggler");
     let navbarCollapse = document.querySelector("#navbarNav");
+    let navLinks = document.querySelectorAll("#navbarNav .nav-link");
+    let body = document.body;
 
-    navbarToggler.addEventListener("click", function () {
+    // Toggle menu on button click
+    navbarToggler.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent click event from bubbling up
+        navbarCollapse.classList.toggle("show");
+
+        // Prevent scrolling when menu is open
         if (navbarCollapse.classList.contains("show")) {
-            navbarCollapse.classList.remove("show");
+            body.classList.add("no-scroll");
         } else {
-            navbarCollapse.classList.add("show");
+            body.classList.remove("no-scroll");
         }
     });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!navbarCollapse.contains(event.target) && !navbarToggler.contains(event.target)) {
+            navbarCollapse.classList.remove("show");
+            body.classList.remove("no-scroll"); // Re-enable scrolling
+        }
+    });
+
+    // Close menu when clicking on a nav link
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            navbarCollapse.classList.remove("show");
+            body.classList.remove("no-scroll"); // Re-enable scrolling
+        });
+    });
 });
+
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -296,55 +321,74 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    function sendConfirmationEmail(name, email, product, price) {
-        document.getElementById("payer-name").value = name;
-        document.getElementById("payer-email").value = email;
-        document.getElementById("product-name").value = product;
-        document.getElementById("product-price").value = "€" + price;
-        document.getElementById("payment-confirmation-form").submit();
+    console.log("JavaScript is geladen!");
+
+    const popup = document.getElementById("paypal-popup");
+    const popupTitle = document.getElementById("popup-title");
+    const popupDescription = document.getElementById("popup-description");
+    const paypalContainer = document.getElementById("paypal-button-container");
+    const closeButton = document.querySelector(".close-btn");
+
+    function showPopup(title, description, price) {
+        console.log(`Popup geopend: ${title}, Prijs: €${price}`);
+
+        popupTitle.innerText = title;
+        popupDescription.innerText = description;
+        popup.style.display = "flex";
+
+        // Verwijder oude PayPal knop als die er al is
+        paypalContainer.innerHTML = "";
+
+        // Controleer of PayPal correct is geladen
+        if (typeof paypal !== "undefined") {
+            paypal.Buttons({
+                createOrder: function (data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{ amount: { value: price } }]
+                    });
+                },
+                onApprove: function (data, actions) {
+                    return actions.order.capture().then(function (details) {
+                        alert("Betaling geslaagd! Bedankt " + details.payer.name.given_name + " voor je aankoop van " + title + ".");
+                        popup.style.display = "none"; // Sluit pop-up na betaling
+                    });
+                },
+                onError: function (err) {
+                    alert("Betaling mislukt, probeer opnieuw.");
+                }
+            }).render("#paypal-button-container");
+        } else {
+            alert("Fout: PayPal kon niet worden geladen.");
+        }
     }
 
-    // PayPal button for 10-Beurtenkaart Yoga (€70)
-    paypal.Buttons({
-        createOrder: function (data, actions) {
-            return actions.order.create({
-                purchase_units: [{
-                    amount: { value: "70.00" }
-                }]
-            });
-        },
-        onApprove: function (data, actions) {
-            return actions.order.capture().then(function (details) {
-                alert("Betaling geslaagd! Bedankt " + details.payer.name.given_name + " voor je aankoop van de 10-beurtenkaart Yoga.");
-                
-                // Send confirmation email
-                sendConfirmationEmail(details.payer.name.given_name, details.payer.email_address, "10-Beurtenkaart Yoga", "70");
-            });
-        },
-        onError: function (err) {
-            alert("Betaling mislukt, probeer opnieuw.");
-        }
-    }).render('#paypal-button-yoga');
+    // 🔥 **Selecteer alleen de beurtenkaarten!**
+    const beurtenkaarten = document.querySelectorAll(".beurtenkaart");
+    console.log(`Aantal gevonden beurtenkaarten: ${beurtenkaarten.length}`);
 
-    // PayPal button for 10-Beurtenkaart Massage (€450)
-    paypal.Buttons({
-        createOrder: function (data, actions) {
-            return actions.order.create({
-                purchase_units: [{
-                    amount: { value: "450.00" }
-                }]
-            });
-        },
-        onApprove: function (data, actions) {
-            return actions.order.capture().then(function (details) {
-                alert("Betaling geslaagd! Bedankt " + details.payer.name.given_name + " voor je aankoop van de 10-beurtenkaart Massage.");
-                
-                // Send confirmation email
-                sendConfirmationEmail(details.payer.name.given_name, details.payer.email_address, "10-Beurtenkaart Massage", "450");
-            });
-        },
-        onError: function (err) {
-            alert("Betaling mislukt, probeer opnieuw.");
+    beurtenkaarten.forEach(card => {
+        card.addEventListener("click", function () {
+            console.log("Een beurtenkaart is aangeklikt!");
+            
+            const title = this.querySelector("h3") ? this.querySelector("h3").innerText : "Onbekend";
+            const description = this.querySelector("p") ? this.querySelector("p").innerText : "Geen beschrijving beschikbaar.";
+            let price = this.querySelector(".price") ? this.querySelector(".price").innerText.replace("€", "").trim() : "0";
+
+            showPopup(title, description, price);
+        });
+    });
+
+    // Sluiten van de pop-up
+    closeButton.addEventListener("click", function () {
+        popup.style.display = "none";
+    });
+
+    // Sluiten bij klikken buiten de pop-up
+    window.addEventListener("click", function (event) {
+        if (event.target === popup) {
+            popup.style.display = "none";
         }
-    }).render('#paypal-button-massage');
+    });
 });
+
+
