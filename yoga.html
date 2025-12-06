@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga - Zen met Gwen</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zen-pink': '#F5D0D5',
+                        'zen-green': '#A3B899',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-zen-pink/10 text-gray-700">
+    <custom-navbar></custom-navbar>
+    
+    <main>
+        <!-- Yoga Content -->
+        <section class="py-20 relative bg-cover bg-center bg-no-repeat" 
+                 style="background-image: url('img/zenachtergrond.jpg');">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-2/3">
+                        <h1 class="mb-6 text-4xl md:text-5xl font-serif font-bold text-zen-green"> Yogalessen</h2>
+                        <div class="prose max-w-none text-lg space-y-6">
+                            <p>
+                                Mijn yogalessen zijn gericht op het vinden van balans tussen lichaam en geest. 
+                                We werken aan flexibiliteit, kracht en vooral aan ontspanning.
+                            </p>
+                            <p>
+                                De lessen zijn toegankelijk voor alle niveaus. Of je nu beginner bent of al meer ervaring hebt, 
+                                ik pas de oefeningen aan naar ieders mogelijkheden.
+                            </p>
+                            <p>
+                                We sluiten elke les af met een uitgebreide ontspanning, zodat je herboren naar huis gaat.
+                            </p>
+                        </div>
+
+                        <!-- Schedule -->
+                        <div class="mt-16">
+                            <h3 class="text-2xl font-serif font-bold text-zen-green mb-6">Lessenrooster</h3>
+                            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                                <div class="divide-y divide-gray-100">
+                                    <div class="p-6 flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-bold">Dinsdag</h4>
+                                            <p class="text-gray-500">Ontspanningsyoga</p>
+                                        </div>
+                                        <span class="bg-zen-pink/20 text-zen-green px-4 py-2 rounded-full">10:00</span>
+                                    </div>
+                                    <div class="p-6 flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-bold">Woensdag</h4>
+                                            <p class="text-gray-500">Hatha yoga</p>
+                                        </div>
+                                        <span class="bg-zen-pink/20 text-zen-green px-4 py-2 rounded-full">19:00</span>
+                                    </div>
+                                    <div class="p-6 flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-bold">Donderdag</h4>
+                                            <p class="text-gray-500">Avondontspanning</p>
+                                        </div>
+                                        <span class="bg-zen-pink/20 text-zen-green px-4 py-2 rounded-full">20:00</span>
+                                    </div>
+                                    <div class="p-6 flex justify-between items-center">
+                                        <div>
+                                            <h4 class="font-bold">Zondag</h4>
+                                            <p class="text-gray-500">Weekend yoga</p>
+                                        </div>
+                                        <span class="bg-zen-pink/20 text-zen-green px-4 py-2 rounded-full">10:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-6 text-gray-600">
+                                Reserveer je plaats door een bericht te sturen via WhatsApp.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-1/3">
+                        <div class="bg-white p-8 rounded-xl shadow-md sticky top-8">
+                            <h3 class="text-2xl font-serif font-bold text-zen-green mb-6">Prijzen</h3>
+                            <div class="space-y-6">
+                                <div class="border-b pb-6">
+                                    <p class="text-gray-500">Losse les</p>
+                                    <p class="text-2xl font-bold text-zen-green">€7</p>
+                                </div>
+                                <div class="border-b pb-6">
+                                    <p class="text-gray-500">10-beurtenkaart</p>
+                                    <p class="text-2xl font-bold text-zen-green">€70</p>
+                                </div>
+                                <div>
+                                    <a href="https://wa.me/32498930036" 
+                                       class="bg-zen-green hover:bg-zen-green/90 text-white px-6 py-3 rounded-full text-lg font-medium flex items-center gap-2 justify-center transition-all">
+                                        <i data-feather="message-circle"></i> Reserveer nu
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Gift Card -->
+                            <div class="mt-12 pt-8 border-t">
+                                <h3 class="text-2xl font-serif font-bold text-zen-green mb-4">Cadeaubon</h3>
+                                <p class="mb-6">
+                                    Geef een cadeaubon voor 10 yogalessen als origineel cadeau.
+                                </p>
+                                <a href="https://wa.me/32498930036" 
+                                   class="bg-zen-pink hover:bg-zen-pink/90 text-zen-green px-6 py-3 rounded-full text-lg font-medium flex items-center gap-2 justify-center transition-all">
+                                    <i data-feather="gift"></i> Vraag info
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-16 bg-zen-green/10">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-serif font-bold text-center text-zen-green mb-12">Wat zeggen mijn yogi's?</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <i data-feather="star" class="text-yellow-400 w-5 h-5 fill-yellow-400"></i>
+                            <i data-feather="star" class="text-yellow-400 w-5 h-5 fill-yellow-400"></i>
+                            <i data-feather="star" class="text-yellow-400 w-5 h-5 fill-yellow-400"></i>
+                            <i data-feather="star" class="text-yellow-400 w-5 h-5 fill-yellow-400"></i>
+                            <i data-feather="star" class="text-yellow-400 w-5 h-5 fill-yellow-400"></i>
+                        </div>
+                        <p class="italic mb-6 text-lg">
+                            "De yogalessen bij Gwen zijn mijn wekelijkse moment van rust. Ze geeft duidelijke instructies en creëert een fijne sfeer."
+                        </p>
+                        <p class="font-medium">- Sofie</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <i data-feather="star" class="text-yellow-400 w-5 h-5 fill-yellow-400"></i>
+                            <i data-feather="star" class="text-yellow-400 w-5 h-5 fill-yellow-400"></i>
+                            <i data-feather="star" class="text-yellow-400 w-5 h-5 fill-yellow-400"></i>
+                            <i data-feather="star" class="text-yellow-400 w-5 h-5 fill-yellow-400"></i>
+                            <i data-feather="star" class="text-yellow-400 w-5 h-5 fill-yellow-400"></i>
+                        </div>
+                        <p class="italic mb-6 text-lg">
+                            "Als beginner voelde ik me meteen op mijn gemak. Gwen heeft oog voor iedereen en past oefeningen aan waar nodig."
+                        </p>
+                        <p class="font-medium">- Tom</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-zen-green text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-serif font-bold mb-6">Start vandaag nog met yoga</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">
+                    Stuur een berichtje via WhatsApp om je eerste les te reserveren.
+                </p>
+                <a href="https://wa.me/32498930036" 
+                   class="bg-white hover:bg-white/90 text-zen-green px-8 py-4 rounded-full text-lg font-medium flex items-center gap-2 justify-center mx-auto max-w-xs transition-all">
+                    <i data-feather="message-circle"></i> 0498 93 00 36
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+.prose {
+    line-height: 1.75;
+}
+
+.prose p {
+    margin-bottom: 1.25em;
+}
+
+/* Animation for buttons */
+.button-hover-effect {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.button-hover-effect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #A3B899;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8ea085;
+}
+
+.service-card {
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+    transform: scale(1.03);
+}
+
+.service-card .overlay {
+    transition: background-color 0.4s ease;
+}
+
+.service-card:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+}

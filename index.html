@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen met Gwen - Yoga & Massage</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zen-pink': '#F5D0D5',
+                        'zen-green': '#A3B899',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans bg-zen-pink/10 text-gray-700">
+    <custom-navbar></custom-navbar>
+
+    <main>
+
+        <!-- FULL BACKGROUND SECTION (Hero + Services combined) -->
+        <section class="relative bg-cover bg-center bg-no-repeat" 
+                 style="background-image: url('img/zenachtergrond.jpg');">
+
+            <!-- HERO CONTENT -->
+            <div class="min-h-[50vh] flex flex-col justify-center items-center text-center px-6 pt-24 pb-16">
+                <h1 class="text-5xl md:text-6xl font-serif font-bold text-zen-green mb-6">
+                    Zen met Gwen
+                </h1>
+                <a href="https://wa.me/32498930036" 
+                   class="bg-zen-green hover:bg-zen-green/90 text-white px-8 py-4 rounded-full text-lg font-medium flex items-center gap-2 transition-all">
+                    <i data-feather="message-circle"></i> Whatsapp naar Gwen
+                </a>
+            </div>
+
+            <!-- SERVICES SECTION OVERLAY -->
+            <div class="px-6 pb-20 pt-10 bg-white/0">
+                <div class="grid md:grid-cols-2 gap-10">
+
+                    <!-- Yoga Card -->
+                        <div class="service-card relative bg-cover bg-center rounded-xl shadow-md hover:shadow-lg transition-shadow p-8 text-white overflow-hidden"
+                            data-link="/yoga.html"
+                            style="background-image: url('img/yogazaal.jpg');">
+
+                            <div class="overlay absolute inset-0 bg-black/10"></div>
+
+
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center mb-6">
+                                <i data-feather="activity" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold mb-4">Yoga</h3>
+                            <p class="mb-6">
+                                Ontspannende yogalessen op verschillende momenten in de week. 
+                                Voor zowel beginners als gevorderden.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Massage Card -->
+                        <div class="service-card relative bg-cover bg-center rounded-xl shadow-md hover:shadow-lg transition-shadow p-8 text-white overflow-hidden"
+                            data-link="/massage.html"
+                             style="background-image: url('img/massage.jpg');">
+
+                             <div class="overlay absolute inset-0 bg-black/10"></div>
+
+
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center mb-6">
+                                <i data-feather="heart" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold mb-4">Massage</h3>
+                            <p class="mb-6">
+                                Professionele massages om spanningen los te laten en je lichaam te verwennen.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="py-16 bg-zen-green text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-serif font-bold mb-6">
+                    Klaar om te ontspannen?
+                </h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">
+                    Reserveer vandaag nog je yogales of massage via WhatsApp.
+                </p>
+                <a href="https://wa.me/32498930036" 
+                   class="bg-white hover:bg-white/90 text-zen-green px-8 py-4 rounded-full text-lg font-medium flex items-center gap-2 justify-center mx-auto max-w-xs transition-all">
+                    <i data-feather="message-circle"></i> Stuur een bericht
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>
